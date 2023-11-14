@@ -1,0 +1,17 @@
+.header-container {
+  background-color: #eee;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.search-input {
+  flex-grow: 0.9;
+  padding: 0.5rem;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  border-radius: 0.5rem 0 0 0.5rem;
+  font-size: 1rem;
+}
+.header-container > button {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
