@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import "../styles/SortOptions.css";
 const SortOptions = () => {
   const filterType = useSelector((state) => state.filterType);
   const sortOptions = useSelector((state) => state.sortOptions);

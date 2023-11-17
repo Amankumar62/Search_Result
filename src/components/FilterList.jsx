@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Filter from "./Filter";
-import "./FilterList.css";
+import "../styles/FilterList.css";
 
 const FilterList = () => {
   const filterOptions = useSelector((state) => state.filterOptions);

@@ -1,20 +1,21 @@
-.filter-container > h4 {
+.filter-container h4 {
   cursor: pointer;
   text-transform: uppercase;
   border: 1px solid #aaa;
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
-.selected-filter {
+.filter-container .selected-filter {
   color: orange;
 }
-.filter-item-list {
+.filter-container .filter-item-list {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 0.7rem;
   z-index: 999;
   flex-wrap: wrap;
+  height: -moz-fit-content;
   height: fit-content;
   max-height: 250px;
   overflow-x: scroll;
@@ -23,4 +24,4 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
   position: absolute;
   background-color: #fff;
-}
+}/*# sourceMappingURL=Filter.css.map */

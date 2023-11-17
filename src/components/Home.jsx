@@ -5,9 +5,9 @@ import FilterList from "./FilterList";
 import ProductList from "./ProductList";
 import SortOptions from "./SortOptions";
 import { Button } from "@blueprintjs/core";
-
-import "./Home.css";
 import Pagination from "./Pagination";
+
+import "../styles/Home.css";
 
 const Home = () => {
   const dispatch = useDispatch();

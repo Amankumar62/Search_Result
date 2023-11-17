@@ -1,0 +1,11 @@
+.pagination-container {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+}
+.pagination-container span {
+  font-weight: 600;
+}/*# sourceMappingURL=Pagination.css.map */

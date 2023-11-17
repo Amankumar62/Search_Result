@@ -1,5 +1,5 @@
 import React from "react";
-import "./Filter.css";
+import "../styles/Filter.css";
 
 const Filter = ({ name, type, items, selectedFilter, setFilter }) => {
   return (

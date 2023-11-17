@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import "./Header.css";
+import "../styles/Header.css";
 import { InputGroup, Button } from "@blueprintjs/core";
 const Header = () => {
   const dispatch = useDispatch();
