@@ -8,10 +8,10 @@ const SortOptions = () => {
   }
   return (
     <div className="sort-option-container">
-      {sortOptions.map((option) => {
+      {sortOptions.map((option, index) => {
         if (!option.directions) {
           return (
-            <section>
+            <section key={index}>
               <h3>{option.label}</h3>
               <label key={option.id}>
                 <input
@@ -25,7 +25,7 @@ const SortOptions = () => {
           );
         } else {
           return (
-            <section>
+            <section key={index}>
               <h3>{option.label}</h3>
               {option.directions.map((direction) => {
                 return (

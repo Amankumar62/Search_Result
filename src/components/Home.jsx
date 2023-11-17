@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import FilterList from "./FilterList";
 import ProductList from "./ProductList";
 import SortOptions from "./SortOptions";
+import { Button } from "@blueprintjs/core";
+
 import "./Home.css";
 import Pagination from "./Pagination";
 
@@ -15,19 +17,24 @@ const Home = () => {
   return (
     <div className="home-container">
       <Header />
+
       <div className="toggle-filter-container">
-        <button
+        <Button
+          intent="success"
+          large={true}
           onClick={() =>
             dispatch({ type: "SET_FILTER_TYPE", payload: "filter" })
           }
         >
           Filters
-        </button>
-        <button
+        </Button>
+        <Button
+          intent="success"
+          large={true}
           onClick={() => dispatch({ type: "SET_FILTER_TYPE", payload: "sort" })}
         >
           Sort Options
-        </button>
+        </Button>
       </div>
       <FilterList />
       <SortOptions />

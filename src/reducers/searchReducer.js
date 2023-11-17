@@ -5,6 +5,8 @@ const initialState = {
   query: "tops",
   pageNumber: 1,
   loading: false,
+  total: 0,
+  per_page: 0,
   error: null,
   filterType: null,
 };
@@ -28,6 +30,8 @@ const searchReducer = (state = initialState, actions) => {
         products: actions.payload.details,
         filterOptions: actions.payload.filters,
         sortOptions: actions.payload.sort_options,
+        total: actions.payload.total,
+        per_page: actions.payload.per_page,
       };
     case "SET_QUERY":
       return {

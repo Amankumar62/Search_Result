@@ -1,0 +1,7 @@
+.filter-list-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}

@@ -1,17 +1,25 @@
 import "./Product.css";
+import { Card, Elevation } from "@blueprintjs/core";
 
 const Product = ({
   image_url,
   name,
   price,
+  link,
   shopify_tags,
   available,
-  _vendor,
   discount_amount,
   discount_percentage,
 }) => {
   return (
-    <div className="product-container">
+    <Card
+      interactive={true}
+      elevation={Elevation.TWO}
+      className="product-container"
+      onClick={() => {
+        window.open(link, "_blank");
+      }}
+    >
       <img src={image_url} alt={name} loading="lazy" />
       <div className="product-content">
         <p className="product-content-name">{name}</p>
@@ -37,7 +45,7 @@ const Product = ({
           ))}
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

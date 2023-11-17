@@ -1,0 +1,26 @@
+.filter-container > h4 {
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 1px solid #aaa;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.selected-filter {
+  color: orange;
+}
+.filter-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.7rem;
+  z-index: 999;
+  flex-wrap: wrap;
+  height: fit-content;
+  max-height: 250px;
+  overflow-x: scroll;
+  text-align: start;
+  border-radius: 0.3rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  background-color: #fff;
+}

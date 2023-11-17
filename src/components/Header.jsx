@@ -1,26 +1,30 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import "./Header.css";
+import { InputGroup, Button } from "@blueprintjs/core";
 const Header = () => {
   const dispatch = useDispatch();
   const [query, setQuery] = useState("");
   return (
     <div className="header-container">
-      <input
-        type="search"
+      <InputGroup
+        type="text"
+        large={true}
         value={query}
         className="search-input"
         placeholder="Search product"
         onChange={(e) => setQuery(e.target.value)}
-      ></input>
-      <button
+      ></InputGroup>
+      <Button
+        intent="success"
         onClick={() => {
           dispatch({ type: "SET_QUERY", payload: query });
+          dispatch({ type: "SET_PAGENO", payload: 1 });
           dispatch({ type: "FETCH_PRODUCT_DETAIL" });
         }}
       >
         Search
-      </button>
+      </Button>
     </div>
   );
 };

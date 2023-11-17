@@ -1,9 +1,6 @@
 .toggle-filter-container {
   display: flex;
   justify-content: space-between;
-  width: 95%;
+  width: 85%;
   margin: 1rem auto;
-}
-.home-container {
-  height: 100vh;
 }
