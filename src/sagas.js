@@ -30,11 +30,8 @@ function* fetchProducts() {
         body: urlencoded,
       }
     ).then((response) => response.json());
-
-    console.log(response);
     yield put({ type: "FETCH_PRODUCT_SUCCESS", payload: response });
   } catch (error) {
-    console.log(error);
     yield put({ type: "FETCH_PRODUCT_ERROR" });
   }
 }

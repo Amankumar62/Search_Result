@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/Filter.css";
 
 const Filter = ({ name, type, items, selectedFilter, setFilter }) => {
   return (
@@ -12,10 +11,10 @@ const Filter = ({ name, type, items, selectedFilter, setFilter }) => {
       </h4>
       {selectedFilter !== name ? null : (
         <div className="filter-item-list">
-          {items.map((item) => (
-            <label key={item.id}>
-              <input type={type} checked={item.selected} name={name} />{" "}
-              {item.name} <b>({item.count})</b>
+          {items.map(({ id, selected, count, name }) => (
+            <label key={id}>
+              <input type={type} checked={selected} name={name} /> {name}
+              <b>({count})</b>
             </label>
           ))}
         </div>

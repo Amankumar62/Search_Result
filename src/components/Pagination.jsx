@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Button } from "@blueprintjs/core";
-import "../styles/Pagination.css";
+
 const Pagination = () => {
   const pageNumber = useSelector((state) => state.pageNumber);
   const per_page = useSelector((state) => state.per_page);

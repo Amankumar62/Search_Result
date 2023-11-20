@@ -1,4 +1,3 @@
-import "../styles/Product.css";
 import { Card, Elevation } from "@blueprintjs/core";
 
 const Product = ({

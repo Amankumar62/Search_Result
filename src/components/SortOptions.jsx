@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import "../styles/SortOptions.css";
 const SortOptions = () => {
   const filterType = useSelector((state) => state.filterType);
   const sortOptions = useSelector((state) => state.sortOptions);
@@ -19,7 +18,7 @@ const SortOptions = () => {
                   type="radio"
                   checked={option.selected}
                   name={option.id}
-                />{" "}
+                />
                 {option.label}
               </label>
             </section>
@@ -35,7 +34,7 @@ const SortOptions = () => {
                       type="radio"
                       checked={direction.selected}
                       name={option.id}
-                    />{" "}
+                    />
                     {direction.label}
                   </label>
                 );

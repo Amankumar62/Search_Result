@@ -4,7 +4,7 @@ const initialState = {
   sortOptions: [],
   query: "tops",
   pageNumber: 1,
-  loading: false,
+  loading: true,
   total: 0,
   per_page: 0,
   error: null,
@@ -32,11 +32,13 @@ const searchReducer = (state = initialState, actions) => {
         sortOptions: actions.payload.sort_options,
         total: actions.payload.total,
         per_page: actions.payload.per_page,
+        loading: false,
       };
     case "SET_QUERY":
       return {
         ...state,
         query: actions.payload,
+        pageNumber: 1,
       };
     case "SET_PAGENO":
       return {
