@@ -1,12 +1,13 @@
 import { useEffect } from "react";
-import { setFilterType, fetchProductDetail } from "../actions";
+import { fetchProductDetail } from "../actions";
 import Header from "../components/Header";
 import { useDispatch, useSelector } from "react-redux";
 import FilterList from "../components/FilterList";
 import ProductList from "../components/ProductList";
 import SortOptions from "../components/SortOptions";
-import { Button, Spinner } from "@blueprintjs/core";
+import { Spinner } from "@blueprintjs/core";
 import Pagination from "../components/Pagination";
+import ToggleFilter from "../components/ToggleFilter";
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -27,22 +28,7 @@ const Search = () => {
         <p className="empty-list">No Products Found</p>
       ) : (
         <>
-          <div className="toggle-filter-container">
-            <Button
-              intent="success"
-              large={true}
-              onClick={() => dispatch(setFilterType("filter"))}
-            >
-              Filters
-            </Button>
-            <Button
-              intent="success"
-              large={true}
-              onClick={() => dispatch(setFilterType("sort"))}
-            >
-              Sort Options
-            </Button>
-          </div>
+          <ToggleFilter />
           {loading ? (
             <Spinner />
           ) : (
