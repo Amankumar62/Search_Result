@@ -23,7 +23,7 @@ const Search = () => {
   ) : (
     <div>
       <Header />
-      {products.length === 0 ? (
+      {!loading && products.length === 0 ? (
         <p className="empty-list">No Products Found</p>
       ) : (
         <>
