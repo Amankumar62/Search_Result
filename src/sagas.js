@@ -1,4 +1,10 @@
 import { takeEvery, put, select } from "redux-saga/effects";
+import { FETCH_PRODUCT_DETAILS } from "./actions";
+import {
+  fetchProductLoading,
+  fetchProductError,
+  fetchProductSuccess,
+} from "./actions";
 
 function* fetchProducts() {
   try {
@@ -19,7 +25,7 @@ function* fetchProducts() {
       "5dff8cbc1c833937d5b6ff490de6639b"
     );
     urlencoded.append("identification[store_id]", "77435339050");
-    yield put({ type: "FETCH_PRODUCT_LOADING" });
+    yield put(fetchProductLoading());
     const response = yield fetch(
       `https://api-r1.tagalys.com/v1/search?q=${state.query}&page=${state.pageNumber}`,
       {
@@ -30,12 +36,12 @@ function* fetchProducts() {
         body: urlencoded,
       }
     ).then((response) => response.json());
-    yield put({ type: "FETCH_PRODUCT_SUCCESS", payload: response });
+    yield put(fetchProductSuccess(response));
   } catch (error) {
-    yield put({ type: "FETCH_PRODUCT_ERROR" });
+    yield put(fetchProductError());
   }
 }
 
 export function* searchSaga() {
-  yield takeEvery("FETCH_PRODUCT_DETAIL", fetchProducts);
+  yield takeEvery(FETCH_PRODUCT_DETAILS, fetchProducts);
 }

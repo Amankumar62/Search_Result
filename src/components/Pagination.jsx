@@ -1,4 +1,4 @@
-import React from "react";
+import { setPageNumber, fetchProductDetail } from "../actions";
 import { useSelector, useDispatch } from "react-redux";
 import { Button } from "@blueprintjs/core";
 
@@ -11,13 +11,13 @@ const Pagination = () => {
   if (!total) {
     return null;
   }
-  const pageHandler = (pageNo) => {
-    if (pageNo <= 0 || pageNo > Math.ceil(total / per_page)) {
+  const pageHandler = (pageNumber) => {
+    if (pageNumber <= 0 || pageNumber > Math.ceil(total / per_page)) {
       return;
     }
 
-    dispatch({ type: "SET_PAGENO", payload: pageNo });
-    dispatch({ type: "FETCH_PRODUCT_DETAIL" });
+    dispatch(setPageNumber(pageNumber));
+    dispatch(fetchProductDetail());
   };
   return (
     <div className="pagination-container">

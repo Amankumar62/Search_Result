@@ -1,5 +1,3 @@
-import React from "react";
-
 const Filter = ({ name, type, items, selectedFilter, setFilter }) => {
   return (
     <div className="filter-container">

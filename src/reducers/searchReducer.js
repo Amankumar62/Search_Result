@@ -1,3 +1,12 @@
+import {
+  FETCH_PRODUCT_LOADING,
+  FETCH_PRODUCT_ERROR,
+  FETCH_PRODUCT_SUCCESS,
+  SET_SEARCH_QUERY,
+  SET_PAGE_NUMBER,
+  SET_FILTER_TYPE,
+} from "../actions";
+
 const initialState = {
   products: [],
   filterOptions: [],
@@ -12,19 +21,19 @@ const initialState = {
 };
 const searchReducer = (state = initialState, actions) => {
   switch (actions.type) {
-    case "FETCH_PRODUCT_LOADING":
+    case FETCH_PRODUCT_LOADING:
       return {
         ...state,
         loading: true,
         error: null,
       };
-    case "FETCH_PRODUCT_ERROR":
+    case FETCH_PRODUCT_ERROR:
       return {
         ...state,
         loading: false,
         error: "Failed to fetch products",
       };
-    case "FETCH_PRODUCT_SUCCESS":
+    case FETCH_PRODUCT_SUCCESS:
       return {
         ...state,
         products: actions.payload.details,
@@ -34,18 +43,18 @@ const searchReducer = (state = initialState, actions) => {
         per_page: actions.payload.per_page,
         loading: false,
       };
-    case "SET_QUERY":
+    case SET_SEARCH_QUERY:
       return {
         ...state,
         query: actions.payload,
         pageNumber: 1,
       };
-    case "SET_PAGENO":
+    case SET_PAGE_NUMBER:
       return {
         ...state,
         pageNumber: actions.payload,
       };
-    case "SET_FILTER_TYPE":
+    case SET_FILTER_TYPE:
       return {
         ...state,
         filterType:

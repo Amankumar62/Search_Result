@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { setSearchQuery, fetchProductDetail } from "../actions";
 import { useDispatch } from "react-redux";
 import { InputGroup, Button } from "@blueprintjs/core";
 const Header = () => {
@@ -8,11 +9,11 @@ const Header = () => {
   const searchBtnRef = useRef(null);
 
   const searchHandler = () => {
-    dispatch({ type: "SET_QUERY", payload: query });
-    dispatch({ type: "FETCH_PRODUCT_DETAIL" });
+    dispatch(setSearchQuery(query));
+    dispatch(fetchProductDetail());
   };
 
-  const debounceClick = (func, delay) => {
+  const debounceClick = (func, delay = 300) => {
     if (typeof func !== "function") {
       return;
     }

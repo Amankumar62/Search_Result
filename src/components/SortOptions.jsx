@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 const SortOptions = () => {
   const filterType = useSelector((state) => state.filterType);

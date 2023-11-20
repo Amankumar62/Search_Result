@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import { setFilterType, fetchProductDetail } from "../actions";
 import Header from "../components/Header";
 import { useDispatch, useSelector } from "react-redux";
 import FilterList from "../components/FilterList";
@@ -14,7 +15,7 @@ const Search = () => {
   const products = useSelector((state) => state.products);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_PRODUCT_DETAIL" });
+    dispatch(fetchProductDetail());
   }, []);
 
   return error ? (
@@ -30,18 +31,14 @@ const Search = () => {
             <Button
               intent="success"
               large={true}
-              onClick={() =>
-                dispatch({ type: "SET_FILTER_TYPE", payload: "filter" })
-              }
+              onClick={() => dispatch(setFilterType("filter"))}
             >
               Filters
             </Button>
             <Button
               intent="success"
               large={true}
-              onClick={() =>
-                dispatch({ type: "SET_FILTER_TYPE", payload: "sort" })
-              }
+              onClick={() => dispatch(setFilterType("sort"))}
             >
               Sort Options
             </Button>
