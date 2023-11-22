@@ -1,7 +1,9 @@
 import { useRef, useState } from "react";
-import { setSearchQuery, fetchProductDetail } from "../actions";
 import { useDispatch } from "react-redux";
 import { InputGroup, Button } from "@blueprintjs/core";
+
+import { setSearchQuery } from "../actions";
+
 const Header = () => {
   const dispatch = useDispatch();
   const [query, setQuery] = useState("");
@@ -10,7 +12,6 @@ const Header = () => {
 
   const searchHandler = () => {
     dispatch(setSearchQuery(query));
-    dispatch(fetchProductDetail());
   };
 
   const debounceClick = (func, delay = 300) => {

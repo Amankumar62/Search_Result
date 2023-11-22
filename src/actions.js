@@ -30,6 +30,6 @@ export const setFilterType = (filterType) => {
   return { type: SET_FILTER_TYPE, payload: filterType };
 };
 
-export const fetchProductDetail = () => {
+export const fetchSearchResults = () => {
   return { type: FETCH_PRODUCT_DETAILS };
 };

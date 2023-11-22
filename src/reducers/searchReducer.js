@@ -15,7 +15,7 @@ const initialState = {
   pageNumber: 1,
   loading: true,
   total: 0,
-  per_page: 0,
+  perPage: 0,
   error: null,
   filterType: null,
 };
@@ -40,7 +40,7 @@ const searchReducer = (state = initialState, actions) => {
         filterOptions: actions.payload.filters,
         sortOptions: actions.payload.sort_options,
         total: actions.payload.total,
-        per_page: actions.payload.per_page,
+        perPage: actions.payload.per_page,
         loading: false,
       };
     case SET_SEARCH_QUERY:

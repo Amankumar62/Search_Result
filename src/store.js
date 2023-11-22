@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from "redux";
 import searchReducer from "./reducers/searchReducer";
-import { searchSaga } from "./sagas";
+import { searchSaga } from "./searchSagas";
 import createSagaMiddleware from "redux-saga";
 
 const sagaMiddleware = createSagaMiddleware();
